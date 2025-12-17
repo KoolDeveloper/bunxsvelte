@@ -10,6 +10,7 @@
             <NavLink href="/stock" icon="streamline-stickies-color:slate" text="Inventario"/>
             <NavLink href="/customers" icon="streamline-stickies-color:baby" text="Clientes"/>
             <NavLink href="/sales" icon="streamline-stickies-color:reciept-1-duo" text="Ventas"/>
+            <NavLink href="/dashboard" icon ="streamline-stickies-color:add-device" text="Dashboard" />
         </ul>
     </nav>
 </header>
