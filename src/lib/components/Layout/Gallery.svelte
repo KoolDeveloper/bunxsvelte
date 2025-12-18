@@ -1,56 +1,43 @@
-<script>
+<script lang="ts">
+	import 'iconify-icon';
+	import type { Product } from '$lib/types/Product';
 
-    import 'iconify-icon';
-
-	let data = [
-		{
-			id: '001',
-			name: 'Camiseta (T-Shirt)',
-			internal_cost: 12000,
-			cost: 36000,
-			available_sizes: { xl: 20, l: 10, m: 2, s: 500, u: 0 },
-			color: 'white',
-			imageUrl: '/assets/misaca.png'
-		},
-		{
-			id: '002',
-			name: 'pantaloncito',
-			internal_cost: 30000,
-			cost: 108000,
-			available_sizes: { xl: 1, l: 1, m: 0, s: 10, u: 0 },
-			color: 'blue',
-			imageUrl: '/assets/pantaloncito.png'
-		}
-	];
+	export let data: Product[] = [];
 </script>
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-    .font-bree{
-        font-family: 'Bree Serif', serif;
-    }
-
-    .font-roboto{
-        font-family: 'Roboto', sans-serif;
-    }
-
-</style>
-
-<div class="w-full flex justify-center">
-    <button aria-label="Añadir Articulo"><iconify-icon icon="streamline-stickies-color:cancel-2-duo" width={'3rem'} class="transform rotate-45"></iconify-icon></button>
+<div class="flex w-full justify-center">
+	<button aria-label="Añadir Articulo"
+		><iconify-icon
+			icon="streamline-stickies-color:cancel-2-duo"
+			width={'3rem'}
+			class="rotate-45 transform"
+		></iconify-icon></button
+	>
 </div>
+
 {#if data}
-	<div class="grid grid-cols-2 xl:grid-cols-5 gap-4 p-6 text-center text-xl">
+	<div class="grid gap-4 p-6 text-center text-xl md:grid-cols-2 xl:grid-cols-5">
 		{#each data as article}
 			<a href={`/stock/${article.id}`}>
-				<div class="group  hover:backdrop-brightness-200 p-3 rounded-2xl">
+				<div class="group rounded-2xl p-3 hover:backdrop-brightness-200">
 					<img src={article.imageUrl} alt={article.name} class="object-fit h-75 w-75 rounded-2xl" />
-					<p class="group-hover:text-green-400 font-bree">${article.cost}</p>
-					<p class="group-hover:text-green-400 font-roboto uppercase">{article.name}</p>
+					<p class="font-bree group-hover:text-green-400">${article.cost}</p>
+					<p class="font-roboto uppercase group-hover:text-green-400">{article.name}</p>
 				</div>
 			</a>
 		{/each}
 	</div>
 {/if}
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+	.font-bree {
+		font-family: 'Bree Serif', serif;
+	}
+
+	.font-roboto {
+		font-family: 'Roboto', sans-serif;
+	}
+</style>
