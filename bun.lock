@@ -1,5 +1,6 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "bunxsvelte",
@@ -19,7 +20,7 @@
         "@types/node": "^22",
         "autoprefixer": "^10.4.23",
         "drizzle-kit": "^0.31.8",
-        "drizzle-orm": "^0.45.0",
+        "drizzle-orm": "^0.45.1",
         "eslint": "^9.39.1",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-svelte": "^3.13.1",
