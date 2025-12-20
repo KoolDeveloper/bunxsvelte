@@ -1,6 +1,8 @@
 import { relations, sql } from 'drizzle-orm';
 import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
+//tables
+
 export const colorsTable = sqliteTable('colors', {
 	id: text('id').primaryKey(),
 	name: text('name').notNull(),
@@ -36,6 +38,7 @@ export const salesTable = sqliteTable('sales', {
 });
 
 //middleman
+
 export const salesItemsTable = sqliteTable('sales_items', {
 	id: integer('id', { mode: 'number' }).primaryKey({ autoIncrement: true }),
 	sale_id: integer('sale_id')
@@ -51,6 +54,8 @@ export const salesItemsTable = sqliteTable('sales_items', {
 		.references(() => colorsTable.id),
 	size: text('size')
 });
+
+//relationships
 
 export const customersRelations = relations(customersTable, ({ many }) => ({
 	sales: many(salesTable)

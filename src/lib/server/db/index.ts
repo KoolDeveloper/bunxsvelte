@@ -5,6 +5,12 @@ import { env } from '$env/dynamic/private';
 
 if (!env.DATABASE_URL) throw new Error('DATABASE_URL is not set');
 
-const client = new Database(env.DATABASE_URL);
+// Remove 'file:' prefix if present (common in Drizzle/SQLite connection strings)
+// but incompatible with better-sqlite3 constructor in some environments
+const connectionString = env.DATABASE_URL.startsWith('file:') 
+    ? env.DATABASE_URL.slice(5) 
+    : env.DATABASE_URL;
+
+const client = new Database(connectionString);
 
 export const db = drizzle(client, { schema });
