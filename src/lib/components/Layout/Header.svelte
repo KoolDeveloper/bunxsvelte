@@ -3,9 +3,9 @@
     import NavLink from '../UI/NavLink.svelte';
 </script>
 
-<header class="pt-4 px-4 ">
+<header class="pt-4 px-4 mb-6">
     <nav>
-        <ul class="w-full flex justify-center text-2xl gap-4 md:gap-8">
+        <ul class="w-full grid grid-cols-3 md:grid-cols-5 place-content-center text-2xl gap-4 md:gap-8">
             <NavLink href="/" icon="streamline-stickies-color:globe-1-duo" text="Inicio" />
             <NavLink href="/stock" icon="streamline-stickies-color:slate" text="Inventario"/>
             <NavLink href="/customers" icon="streamline-stickies-color:baby" text="Clientes"/>

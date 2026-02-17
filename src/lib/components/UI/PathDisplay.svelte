@@ -13,6 +13,6 @@
 </style>
 
 
-<div class="flex">
+<div class="flex my-6">
     <h2 class="text-2xl pl-4 uppercase backdrop-brightness-125 text-[#FFFF4D] font-bree">{path}</h2>
 </div>

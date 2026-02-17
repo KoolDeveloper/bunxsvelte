@@ -19,7 +19,7 @@
 	<div class="grid gap-4 p-6 text-center text-xl md:grid-cols-2 xl:grid-cols-5">
 		{#each data as article}
 			<a href={`/stock/${article.id}`}>
-				<div class="group rounded-2xl p-3 hover:backdrop-brightness-200">
+				<div class="group rounded-2xl p-3 hover:backdrop-brightness-200 grid place-content-center">
 					<img src={article.imageUrl} alt={article.name} class="object-fit h-75 w-75 rounded-2xl" />
 					<p class="font-bree group-hover:text-green-400">${article.cost}</p>
 					<p class="font-roboto uppercase group-hover:text-green-400">{article.name}</p>
